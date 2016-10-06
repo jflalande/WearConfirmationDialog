@@ -4,14 +4,12 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
-import android.support.wearable.view.BoxInsetLayout;
 import android.support.wearable.view.CardFragment;
 import android.support.wearable.view.DelayedConfirmationView;
 import android.view.View;
-import android.widget.TextView;
+
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends WearableActivity implements DelayedConfirmationView.DelayedConfirmationListener {
