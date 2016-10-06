@@ -19,10 +19,6 @@ public class MainActivity extends WearableActivity implements DelayedConfirmatio
     private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
             new SimpleDateFormat("HH:mm", Locale.US);
 
-    private BoxInsetLayout mContainerView;
-    private TextView mTextView;
-    private TextView mClockView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,38 +36,6 @@ public class MainActivity extends WearableActivity implements DelayedConfirmatio
         // Start the timer
         mDelayedView.start();
 
-    }
-
-    @Override
-    public void onEnterAmbient(Bundle ambientDetails) {
-        super.onEnterAmbient(ambientDetails);
-        updateDisplay();
-    }
-
-    @Override
-    public void onUpdateAmbient() {
-        super.onUpdateAmbient();
-        updateDisplay();
-    }
-
-    @Override
-    public void onExitAmbient() {
-        updateDisplay();
-        super.onExitAmbient();
-    }
-
-    private void updateDisplay() {
-        if (isAmbient()) {
-            mContainerView.setBackgroundColor(getResources().getColor(android.R.color.black));
-            mTextView.setTextColor(getResources().getColor(android.R.color.white));
-            mClockView.setVisibility(View.VISIBLE);
-
-            mClockView.setText(AMBIENT_DATE_FORMAT.format(new Date()));
-        } else {
-            mContainerView.setBackground(null);
-            mTextView.setTextColor(getResources().getColor(android.R.color.black));
-            mClockView.setVisibility(View.GONE);
-        }
     }
 
     @Override
